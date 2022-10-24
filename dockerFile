@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 8089
+ADD /target/Vaccinations-1.jar NewVaccin.jar
+ENTRYPOINT ["java" ,"-jar" , "NewVaccin.jar"]
