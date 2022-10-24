@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 8089
+ADD /target/Animaux-1.jar NewAnimaux.jar
+ENTRYPOINT ["java" ,"-jar" , "NewAnimaux.jar"]

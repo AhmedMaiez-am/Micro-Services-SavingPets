@@ -1,0 +1,36 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: vaccinations
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/vaccinations/**
+            
+        - id: Animaux
+          uri: http://localhost:8091/
+          predicates:
+            - Path=/Animaux/** 
+            
+        - id: candidatures
+          uri: http://localhost:8089/
+          predicates:
+            - Path=/candidatures/**
+            
+        - id: donations
+          uri: http://localhost:9000/
+          predicates:
+            - Path=/donations/**
+            
+        - id: associations
+          uri: http://localhost:9080/
+          predicates:
+            - Path=/associations/**
+            
+         
+
