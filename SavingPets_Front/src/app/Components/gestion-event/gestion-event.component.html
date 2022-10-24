@@ -1,5 +1,5 @@
 <!-- Page wrapper/Container Section -->
-<div class="container">
+<div class="container" style="margin-left:15% ;">
     <h3 style="text-align: center;">Your {{nEvent}} Events</h3>
     <br>
     <div class="search-wrapper">
@@ -18,8 +18,7 @@
     </a>
       <!-- <button  routerLink="/home/events" href="/home" type="button" class="btn btn-secondary" >Add Event</button> -->
     </div>
-    <small><b>NB:</b> if you want to hide a event make hidden to true</small>
-  
+
       <!-- Responsive Table Section -->
       <table class="responsive-table">
           <!-- Responsive Table Header Section -->
@@ -49,12 +48,12 @@
             </a>
             <fa-icon [icon]="faEdit"  class="material-icons" style="color: #03C1AD;margin-left: 40px;" (click)="opene(contente); setIdThisEvent(e._id)"></fa-icon>
           </td>
-  
+
               </tr>
           </tbody>
       </table>
   </div>
-  
+
   <!--Add-->
   <ng-template #content let-modal  class="modal" >
     <div class="modal-header">
@@ -88,7 +87,7 @@
     </div>
   </ng-template>
   <hr>
-  
+
   <!--Edit-->
   <ng-template #contente let-modal>
     <div class="modal-header">
@@ -138,4 +137,3 @@
       </form>
     </div>
   </ng-template>
-  

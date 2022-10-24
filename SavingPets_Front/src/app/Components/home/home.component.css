@@ -3,7 +3,6 @@ svg {
   left: 0;
   /* top: 0; */
   z-index: -1;
-
 }
 @media (max-width: 500px) {
   .scroll-up-btn {
@@ -20,7 +19,7 @@ svg {
   position: fixed;
   height: 45px;
   width: 42px;
-  background: #03C1AD;
+  background: #03c1ad;
   right: 30px;
   bottom: 10px;
   text-align: center;
@@ -54,8 +53,8 @@ svg {
   height: 94%;
   margin: auto;
   margin-bottom: 100px;
-  background: #F3F3F3;
-  border: 1px solid #03C1AD;
+  background: #f3f3f3;
+  border: 1px solid #03c1ad;
   box-sizing: border-box;
   box-shadow: 0px 0px 35px rgba(61, 61, 61, 0.28);
   border-radius: 30px;
@@ -67,9 +66,6 @@ svg {
 .video-card img {
   max-width: 100%;
   max-height: 100%;
-
-
-
 }
 
 .container2 .col-7 {
@@ -77,11 +73,11 @@ svg {
 }
 
 .container2 h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 110px;
-  color: #03C1AD;
+  color: #03c1ad;
   margin-bottom: 4rem;
 }
 
@@ -91,7 +87,7 @@ svg {
 }
 
 .container2 p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -102,15 +98,14 @@ svg {
 
 .container2 .btn {
   display: inline;
-
 }
 
 .container2 .btn-dark {
   width: 48%;
   height: 68px;
-  background: #03C1AD;
+  background: #03c1ad;
   border-radius: 17px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 29px;
@@ -119,7 +114,7 @@ svg {
 }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (max-width : 720px) {
+@media only screen and (max-width: 720px) {
   footer {
     align-items: center;
     text-align: center;
@@ -133,21 +128,20 @@ svg {
     flex-direction: column;
     align-items: center !important;
     text-align: center !important;
-
   }
 
   .container2 h1 {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 45px;
-    color: #03C1AD;
+    color: #03c1ad;
     margin-top: 0;
     margin-bottom: 1.5rem;
   }
 
   .container2 p {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -175,7 +169,6 @@ svg {
 
   .video-card img {
     max-width: 100%;
-
   }
 
   .container2 .col-7 {
@@ -191,11 +184,7 @@ svg {
   height: 94%;
   margin: auto;
   margin-bottom: 100px;
-  background: linear-gradient(103.78deg,
-      #03c1ad -48.03%,
-      #001834 26.56%,
-      #001834 65.94%,
-      #5a54ff 170.79%);
+  background-image: url("../../../assets/images/home.jpg");
   box-shadow: 0px 0px 46px rgba(61, 61, 61, 0.78);
   padding: 25px;
   border-radius: 25px;
@@ -461,7 +450,6 @@ svg {
   max-width: 100%;
   max-height: fit-content;
   transform: translateX(48px);
-
 }
 
 .container3 .col-7 {
@@ -470,7 +458,6 @@ svg {
 }
 
 .container3 .col-5 {
-
   transform: translateX(50px);
 }
 
@@ -484,12 +471,11 @@ svg {
 }
 
 .container3 p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
-  color: #3D3D3D;
-
+  color: #3d3d3d;
 }
 
 .container3 .btn {
@@ -579,7 +565,6 @@ svg {
     color: #001834;
   }
 
-
   .mini-title h1 {
     font-family: "Poppins";
     font-style: normal;
@@ -592,11 +577,9 @@ svg {
 
 /* Events !!!!! */
 
-
 ::selection {
-  background: #03C1AD;
+  background: #03c1ad;
   color: #fff;
-
 }
 
 .container {
@@ -604,8 +587,6 @@ svg {
   width: 100%;
   overflow: hidden;
   margin: 0;
-
-
 }
 
 .container .main-card {
@@ -613,11 +594,9 @@ svg {
   justify-content: space-between;
   width: 200%;
   transition: 1s;
-
-
 }
 
-#two:checked~.main-card {
+#two:checked ~ .main-card {
   margin-left: -100%;
 }
 
@@ -639,7 +618,6 @@ svg {
   margin-bottom: 35px;
   padding-top: 35px;
   padding: 2% !important;
-
 }
 
 .main-card .cards .card:hover {
@@ -739,7 +717,7 @@ svg {
   height: 15px;
   width: 15px;
   border-radius: 20px;
-  background: #03C1AD;
+  background: #03c1ad;
   margin: 0 4px;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -749,29 +727,28 @@ svg {
   width: 35px;
 }
 
-#one:checked~.button .one {
+#one:checked ~ .button .one {
   width: 35px;
-
 }
 
-#one:checked~.button .two {
+#one:checked ~ .button .two {
   width: 15px;
 }
 
-#two:checked~.button .one {
+#two:checked ~ .button .one {
   width: 15px;
 }
 
-#two:checked~.button .two {
+#two:checked ~ .button .two {
   width: 35px;
 }
 
 .blog-slider5 h3 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
-  color: #03C1AD;
+  color: #03c1ad;
   position: relative;
   text-align: center;
   margin-bottom: 40px;
@@ -828,7 +805,7 @@ input[type="radio"] {
   margin: auto;
   margin-top: 300px;
   margin-bottom: 120px;
-  background: #F3F3F3;
+  background: #f3f3f3;
   box-shadow: 0px 0px 35px rgba(61, 61, 61, 0.28);
   padding: 25px;
   border-radius: 25px;
@@ -843,8 +820,7 @@ input[type="radio"] {
 }
 
 .blog-slider5 h1 {
-
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -855,7 +831,6 @@ input[type="radio"] {
   top: 25%;
   transform: translate(-300%, -85%);
   padding: 10px;
-
 }
 
 .read-more {
@@ -865,7 +840,7 @@ input[type="radio"] {
   border-radius: 50px;
   width: 50% !important;
   height: 45px !important;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 15px !important;
@@ -874,9 +849,7 @@ input[type="radio"] {
   transform: translateY(110%);
 }
 
-
 /* What they say about us  */
-
 
 .blog-slider6 {
   width: 95%;
@@ -888,31 +861,28 @@ input[type="radio"] {
   background: #ffffff;
   align-items: flex-end;
   transition: all 0.3s;
-
 }
 
 .blog-slider6 p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
-  color: #3D3D3D;
+  color: #3d3d3d;
 
-  color: #3D3D3D;
+  color: #3d3d3d;
   position: relative;
   text-align: center;
   padding: 10px;
 }
 
 .blog-slider6 h1 {
-
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
   text-align: right;
-  color: #03C1AD;
-
+  color: #03c1ad;
 }
 
 .blog-slider6 .btn-dark {
@@ -930,8 +900,8 @@ input[type="radio"] {
 }
 
 .screen-card {
-  background: #F3F3F3;
-  border: 1px solid #03C1AD;
+  background: #f3f3f3;
+  border: 1px solid #03c1ad;
   box-sizing: border-box;
   box-shadow: 0px 0px 35px rgba(61, 61, 61, 0.28);
   width: 100%;
@@ -939,13 +909,12 @@ input[type="radio"] {
   border-radius: 35px;
   padding: 2%;
   padding-left: 0;
-
 }
 
 .screen-card img {
   width: 96%;
   height: 96%;
-  border: 1px solid #03C1AD;
+  border: 1px solid #03c1ad;
   border-radius: 35px;
   position: relative;
 }
