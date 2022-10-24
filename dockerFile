@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 8089
+ADD /target/Associations-1.jar Association.jar
+ENTRYPOINT ["java" ,"-jar" , "Association.jar"]
