@@ -1,0 +1,165 @@
+
+.container2 {
+  position: relative;
+  width: 96%;
+  height: 94%;
+  margin: auto;
+  margin-bottom: 100px;
+  background: #f3f3f3;
+  border: 1px solid #03c1ad;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 35px rgba(61, 61, 61, 0.28);
+  border-radius: 30px;
+  padding: 25px;
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+
+.video-card video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 16px;
+  margin-top: 25%;
+
+}
+
+.container2 .col-7 {
+  padding: 77px;
+}
+
+.container2 h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 110px;
+  color: #03c1ad;
+  margin-bottom: 4rem;
+}
+
+.container2 b {
+  font-size: 140px;
+  font-weight: bolder;
+}
+
+.container2 p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: justify;
+  color: black;
+  margin-bottom: 50px;
+}
+
+.container2 .btn {
+  display: inline;
+}
+
+.container2 .btn-dark {
+  width: 48%;
+  height: 68px;
+  background: #03c1ad;
+  border-radius: 17px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 29px;
+  float: right;
+  color: #ffffff;
+}
+.mini-title p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center;
+  color: #001834;
+}
+
+.mini-title h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 110px;
+  color: #03c1ad;
+  text-align: center;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .container2 h1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    color: #03c1ad;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .container2 p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: justify;
+    color: black;
+    margin-bottom: 50px;
+  }
+
+  .container2 .row .col-7 {
+    max-width: 100%;
+  }
+
+  .container2 b {
+    font-size: 90px;
+  }
+
+  .container2 .btn {
+    display: block;
+  }
+
+  .container2 .btn-dark {
+    width: 98%;
+    margin-top: 15px;
+  }
+
+  .video-card video {
+    max-width: 460px !important;
+    margin-left: 15px;
+    height: 300px;
+    border-radius: 16px;
+
+  }
+  .mini-title p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    color: #001834;
+  }
+
+
+  .mini-title h1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: #03c1ad;
+    text-align: center;
+  }
+
+  .video-card{
+    max-width: 770px !important;
+
+  }
+
+  .container2 .col-7 {
+    padding: 15px;
+  }
+
+}

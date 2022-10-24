@@ -1,0 +1,60 @@
+<!-- Event -->
+<div class="wrapper">
+  <div class="main-card">
+    <div class="cards" >
+      <div class="card">
+        <div class="content">
+          <div class="cover-picture-box">
+            <div class="cover-picture">
+              <!-- <img src="http://localhost:9091/User/{{ user.coverImage }}" alt="Photo de Couverture" style="width: 94% ; margin-left:4%;" /> -->
+            </div>
+          </div>
+          <!-- <img src="http://localhost:9091/User/{{ user.profileImage }}" alt="Photo de profile" class="profile-picture" alt="Profile-picture"/> -->
+          <h3 style="transform:translateY(-150%);font-style: Poppins;">{{ event.user.nom }} {{ event.user.prenom }}</h3>
+          <h1 class="event-title"style="font-size:70px;transform:translateY(-80%);font-style: Poppins;">{{event.title}}</h1>
+          <small style="transform:translateY(-300%);font-style: Poppins;">Published on : {{event.date}}</small>
+  
+  
+          <div class="img">
+            <img src="http://localhost:9091/Event/{{ event.image }}" alt="Event Picture" style="max-width: 100%; max-height: 700px;"/>
+          </div>
+          <br>
+          <p style="margin-left: 10%; margin-right: 10%; text-align: center; color: black; font-size: medium; font-family: Arial, Helvetica, sans-serif; text-indent: 5px;">{{event.description}}</p>
+          <br>
+  
+      
+  
+
+          <br>
+          <br>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--<div class="main-card">
+    <div class="cards" >
+      <div class="card">
+        <div class="content">
+          <li style="list-style-type: none; float: left; margin-left: -85%; margin-top: -20px;">
+            <img src="http://localhost:9091/User/{{ user.profileImage }}" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #03c1ad; display: inline;" alt="profile Image"/>
+            <a class="nav-link" style="font-weight: bold; display: inline; color: black; margin-left: 0px; margin-bottom: 10px;">
+              <i class="ion-md-power"></i> {{user.nom}} {{user.prenom}}
+            </a>
+            <br>
+          </li>
+          <br>
+          <div class="form-group" *ngIf="comment">
+            <input style="width: 90%; height: 40px; margin-left: 0px;" type="text" class="form-control" placeholder="Comment"[(ngModel)]="comment.description" required #description="ngModel"/>
+            <button  class="btn btn-primary" style="height: 40px; margin-left: -20%;" (click)="addComment(comment)"> Send </button>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>-->
+</div>
+
+  
+  

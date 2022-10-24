@@ -1,0 +1,155 @@
+<!-- <div class="container">
+  <div class="header">
+    <h1> Your {{nUniversities}} Universities</h1>
+    <br>
+    <div class="search-wrapper">
+      <input type="text" #myInput [(ngModel)]="nom" (input)="SearchUniversity()" class="search-input" placeholder="Search …" />
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24" >
+        <defs></defs>
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="M21 21l-4.35-4.35"></path>
+      </svg>
+    </div>
+    <br>
+    <div class="p-2 bd-highlight">
+      <button type="button" class="btn btn-secondary" (click)="open(content)">
+        New University
+      </button>
+    </div>
+  </div>
+  <div class="dashboard">
+    <br>
+    <div [hidden]="hideUniversite" class="a-box" routerLink="/home/table" *ngFor="let u of listUniversities">
+      <div class="img-container">
+        <div class="img-inner">
+          <div class="inner-skew">
+            <img src="http://localhost:9091/User/{{ u.institutImage }}" />
+          </div>
+        </div>
+      </div>
+      <div class="text-container">
+        <h3><a href="/home/university" (click)="setIdUniversite(u._id)"> {{u.nom}}</a></h3>
+        <div>{{u.titre}}</div>
+        <br>
+        <a  (click)="openalert(contentalert);setIdUniversite(u._id)">
+          <fa-icon style="color: red;" [icon]="faTrash"  class="material-icons"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!--Add-->
+<!-- <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add University</h4>
+    <a href="/home/universities"><button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button></a>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Short Name</label>
+        <input type="text" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+        <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+          <div *ngIf="f.nom.errors.required">Totale Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="titre">Total Name </label>
+        <input type="text" formControlName="titre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.titre.errors }" />
+        <div *ngIf="submitted && f.titre.errors" class="invalid-feedback">
+          <div *ngIf="f.titre.errors.required">Title is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="tel">Phone Number</label>
+        <input type="text" formControlName="tel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" />
+        <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
+          <div *ngIf="f.tel.errors.required">Phone Number is required</div>
+          <div *ngIf="f.tel.errors.minlength"> Phone must be 8 characters </div>
+          <div *ngIf="f.tel.errors.maxlength"> Phone must be 8 characters </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cin">CIN (Login)</label>
+        <input type="text" formControlName="cin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cin.errors }" />
+        <div *ngIf="submitted && f.cin.errors" class="invalid-feedback">
+          <div *ngIf="f.cin.errors.required">mdp is required</div>
+          <div *ngIf="f.cin.errors.minlength"> Cin must be 8 characters </div>
+          <div *ngIf="f.cin.errors.maxlength"> Cin must be 8 characters </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.pattern">Invalid Email</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dateNaissance">Creation Date</label>
+        <input type="date" formControlName="dateNaissance" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateNaissance.errors }" />
+        <div *ngIf="submitted && f.dateNaissance.errors" class="invalid-feedback">
+          <div *ngIf="f.dateNaissance.errors.required">Creation Date is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mdp">Password</label>
+        <input type="password" formControlName="mdp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mdp.errors }" />
+        <div *ngIf="submitted && f.mdp.errors" class="invalid-feedback">
+          <div *ngIf="f.mdp.errors.required">Creation Date is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmMdp">Confirm Password</label>
+        <input type="password" formControlName="confirmMdp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmMdp.errors }" />
+        <div *ngIf="submitted && f.confirmMdp.errors" class="invalid-feedback">
+          <div *ngIf="f.confirmMdp.errors.required">Confirm Your Password...</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="paye">Pays</label>
+        <select  formControlName="paye" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paye.errors }">
+          <option value="Afghanistan" class="form-control" id="option">Afghanistan	</option><option value="Afrique du Sud" class="form-control" id="option">Afrique du Sud</option>
+          <option value="Albanie" class="form-control" id="option">Albanie</option><option value="HOMME" class="form-control" id="option">Algérie</option>
+          <option value="Allemagne" class="form-control" id="option">Allemagne</option><option value="Andorre" class="form-control" id="option">Andorre</option>
+          <option value="Angola" class="form-control" id="option">Angola</option><option value="Anguilla" class="form-control" id="option">Anguilla</option>
+          <option value="Bahamas" class="form-control" id="option">Bahamas</option><option value="Bahreïn" class="form-control" id="option">Bahreïn</option>
+          <option value="Cambodge" class="form-control" id="option">Cambodge</option><option value="Cameroun" class="form-control" id="option">Cameroun</option>
+          <option value="Danemark" class="form-control" id="option">Danemark</option><option value="Égypte" class="form-control" id="option">Égypte</option>
+          <option value="France" class="form-control" id="option">France</option><option value="Gabon" class="form-control" id="option">Gabon</option>
+          <option value="Hong-Kong" class="form-control" id="option">Hong-Kong</option><option value="Inde" class="form-control" id="option">Inde</option>
+          <option value="Italie" class="form-control" id="option">Italie</option><option value="Japon" class="form-control" id="option">Japon</option>
+          <option value="Tunisie" class="form-control" id="option">Tunisie</option><option value="Turquie" class="form-control" id="option">Turquie</option>
+        </select>
+        <div *ngIf="submitted && f.paye.errors" class="invalid-feedback">
+          <div *ngIf="f.paye.errors.required">Pays is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-outline-dark">Add</button>
+        <a href="/home/universities" class="btn btn-link" type="reset">Cancel</a>
+      </div>
+      <div [hidden]="hidemsg" class="alert alert-success"><p>{{msg}}</p></div>
+    </form>
+  </div>
+</ng-template> -->
+
+<!--delete-->
+<!-- <ng-template #contentalert let-modal>
+  <div class="modal-header">
+    <h5 style="color: black; text-align: center;" class="modal-title" id="modal-basic-title">Are You Sur to delete this University ?</h5>
+    <a href="/home/universities">
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </a>
+  </div>
+  <div class="modal-body" >
+    <form [formGroup]="form">
+      <div class="form-group" style="align-items: center;">
+        <a style="color: red;" href="/home/universities" class="btn btn-default" (click)="deleteUniversite(); modal.dismiss('Cross click')">Confirm</a>
+        <a style="color: green;" class="btn btn-link" class="btn btn-default" href="/home/universities" (click)="modal.dismiss('Cross click')">Cancel</a>
+      </div>
+    </form>
+  </div> -->
+<!-- </ng-template> -->

@@ -1,0 +1,44 @@
+<div class="bg"></div>
+  <div style="position: relative;" class="wrapper">
+    <div class="home" routerLink="/">
+      <img src="../../../../assets/images/logo.png" routerLink="/" /> Back to home
+    </div>
+    <div class="headline">
+      <h1>Login</h1>
+    </div>
+    <form name="user" #u="ngForm" (ngSubmit)="signIn()">
+      <div class="signup">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Login (N° CIN)" #cin="ngModel" name="cin" ngModel [(ngModel)]="user.cin" required/>
+          <div class="alert alert-danger" *ngIf="cin.invalid && cin.touched" style="text-align: center; width: 500px; margin-left: 250px">
+            CIN is a Required Field !
+          </div>
+        </div>
+        <div class="form-group">
+          <input  matInput [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Mot de Pass" #mdp="ngModel" name="mdp" ngModel [(ngModel)]="user.mdp" required />
+          <fa-icon [icon]="faEye" style="display: flex;float: right; transform: translateY(-230%);margin-right: 2%;cursor: pointer; color: #03C1AD; font-size: x-large;" class="material-icons" matSuffix (click)="hide = !hide" >{{ hide ? "Show" : "Hide" }}></fa-icon>
+          <div class="alert alert-danger" *ngIf="mdp.invalid && mdp.touched" style="text-align: center; width: 500px; margin-left: 250px">
+            Password is a Required Field !
+          </div>
+        </div>
+        <div class="forget-password">
+          <div class="check-box">
+            <input type="checkbox" id="checkbox" #regle="ngModel" name="regle" ngModel required />
+            <label for="checkbox" style="margin-top: 0px"> &nbsp;I accept
+              <a href="/home/login/confidentialite" style="color: dodgerblue"> the privacy rules</a>
+            </label>
+          </div>
+          <a href="/home/login/forgotpassword">Forget password?</a>
+        </div>
+        <button [disabled]="u.invalid" href="#" type="submit" class="btn" (click)="signIn()">LOGIN</button>
+        <div [hidden]="hideMsg" class="alert alert-danger" style="width: 500px; margin-left: 250px; text-align: center; border-radius: 15px;">
+          {{ msg }}
+        </div>
+        <div class="account-exist">
+          If it comes to the problems, you can visit the <a href="/home/howitwork">help Center</a>
+        </div>
+        <div class="account-exist"></div>
+      </div>
+    </form>
+  </div>
+

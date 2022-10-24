@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="home" routerLink="/">
+    <img src="../../../../assets/images/logo.png" routerLink="/" /> Back to home
+  </div>
+  <div class="headline">
+    <h1>UPDATE PASSWORD</h1>
+  </div>
+  <form name="user" #u="ngForm" (ngSubmit)="updateMDP()">
+    <div class="signup">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Login (N° CIN)" #cin="ngModel" name="cin" ngModel [(ngModel)]="user.cin" required />
+        <div class="alert alert-danger" *ngIf="cin.invalid && cin.touched" style="text-align: center; width: 500px; margin-left: 250px" >
+          CIN is a Required Field !
+        </div>
+      </div>
+    </div>
+    <div class="signup">
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="New Password" #nMdp="ngModel" name="nMdp" ngModel [(ngModel)]="user.nMdp" required />
+        <div class="alert alert-danger" *ngIf="nMdp.invalid && nMdp.touched" style="text-align: center; width: 500px; margin-left: 250px" >
+          Password is a Required Field !
+        </div>
+      </div>
+    </div>
+    <div class="signup">
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Confirm New Password" #cNMdp="ngModel" name="cNMdp" ngModel [(ngModel)]="user.cNMdp" required />
+        <div class="alert alert-danger" *ngIf="cNMdp.invalid && cNMdp.touched" style="text-align: center; width: 500px; margin-left: 250px" >
+          Confirm Your Password !
+        </div>
+      </div>
+    </div>
+    <br>
+    <div style="margin-left: 35%;">
+        <ngx-recaptcha2  name="recaptcha" class="fadeIn third" #captchaElem required #r="ngModel" ngModel [siteKey]="siteKey"></ngx-recaptcha2>
+          <div>
+            <a class="alert alert-danger" *ngIf="r.invalid && r.touched">Recaptcha is a Required Field !</a>
+          </div>
+    </div>
+    <br>
+    <div> S'il S'agit du Problèmes, Vous pouvez Visitez le
+      <a href="/home/login/aide">centre d'aide</a>
+    </div>
+    <input router-link="/home/login" href="/home/login" value="UPDATE" type="submit" class="btn" [disabled]="u.invalid" (click)="updateMDP()" />
+
+    <div class="alert alert-danger" style=" width: 500px; margin-left: 250px; text-align: center; border-radius: 15px;" >
+      {{ msg }}
+    </div>
+    <div class="account-exist">
+      If it comes to the problems, you can visit the <a href="/home/howitwork">help Center</a>
+    </div>
+    <div class="account-exist"></div>
+  </form>
+</div>
+<br />
+<br />

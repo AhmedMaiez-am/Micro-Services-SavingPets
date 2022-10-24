@@ -1,0 +1,98 @@
+<nav>
+  <div class="logo">
+    <a routerLink="/home"><img src="../../../../assets/images/logoP.png" alt="SavingPets" style="width: 150px;" /></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/home/howitwork" routerLinkActive="active">How it works</a></li>
+    <li><a routerLink="/home/events" routerLinkActive="active">Events</a></li>
+    <li><a routerLink="" routerLinkActive="active">Associations</a></li>
+    <li><a routerLink="" routerLinkActive="active">Animaux</a></li>
+    <li><a routerLink="" routerLinkActive="active">Condidatures</a></li>
+
+    <li><a routerLink="/home/contact" routerLinkActive="active">Get in touch</a></li>
+    <li><div class="slim-header-right"></div></li>
+    <li [hidden]="hideLogin">
+      <img class="log-in-logo" style="width: 30px; height: 30px" src="../../assets/images/Vector.png"/>
+      <a class="log-in-logo" style=" font-weight: bold; color: #03c1ad; margin-left: 0px; margin-bottom: 10px;" routerLink="/home/login">Log in</a>
+    </li>
+    <li [hidden]="hideLogout"><a href="/home/profile">
+        <img routerLink="/home/profile" src="http://localhost:9091/User/{{ profileImage }}"style="
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: auto;
+            border: 2px solid #03c1ad;
+            display: inline;
+          "
+          alt=""
+      /></a>
+      <a
+        routerLink="/home/login"
+        class="nav-link"
+        style="
+          font-weight: bold;
+          display: inline;
+          color: #03c1ad;
+          margin-left: 0px;
+          margin-bottom: 10px;
+        "
+        (click)="logout()"
+      >
+        <i class="ion-md-power"></i>
+        &nbsp;Logout
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><span></span></label>
+<label for="active" class="close"></label>
+<div class="wrapper">
+  <ul>
+    <li [hidden]="hideLogin">
+      <img class="log-in-logo" style="width: 30px; height: 30px" src="../../assets/images/Vector.png"/>
+      <a class="log-in-logo" style=" font-weight: bold; color: #03c1ad; margin-left: 0px; margin-bottom: 10px;" routerLink="/home/login">Log in</a>
+    </li>
+    <li [hidden]="hideLogout"><a href="/home/profile">
+        <img routerLink="/home/profile" src="http://localhost:9091/User/{{ profileImage }}"style="
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: auto;
+            border: 2px solid #03c1ad;
+            display: inline;
+          "
+          alt=""
+      /></a>
+      <a
+        routerLink="/home/login"
+        class="nav-link"
+        style="
+          font-weight: bold;
+          display: inline;
+          color: #03c1ad;
+          margin-left: 0px;
+          margin-bottom: 10px;
+        "
+        (click)="logout()"
+      >
+        <i class="ion-md-power"></i>
+        &nbsp;Logout
+      </a>
+    </li>
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/home/howitwork" routerLinkActive="active">How it works</a></li>
+    <li><a routerLink="/home/events" routerLinkActive="active">Events</a></li>
+    <li><a routerLink="/home/blogs" routerLinkActive="active">Blog</a></li>
+    <li><a routerLink="/home/partnership" routerLinkActive="active">Partenership</a></li>
+    <li><a routerLink="/home/contact" routerLinkActive="active">Get in touch</a></li>
+    <li><div class="slim-header-right"></div></li>
+</ul>
+</div>

@@ -1,0 +1,103 @@
+
+
+<button  class="pulse" style="margin-left:43%" [hidden]="isOpened" (click)="toggle()">Create Your Own Event</button>
+
+<div [style.display]="style1" class="event-slider6" [hidden]="hideformevent">
+  <div class="container">
+    <div class="main-card" >
+      <div class="cards"  >
+        <div class="card" style="width: 30%; height: 550px; margin-left: 12%; margin-bottom: 0%;" >
+          <i class="fa-regular fa-circle-xmark" style="color: #03C1AD; cursor: pointer;" [hidden]="!isOpened" (click)="closeNote()"></i>
+          <a href="/home/events" [hidden]="!isOpened" (click)="closeNote()" style="margin-top: 15px;margin-left:15px; font-size: x-large;color: black;">
+            <i class="fa-solid fa-xmark" ></i>
+          </a>
+          <h5 style="text-align: center; margin-top: 0%;">Create Your Own Event !</h5>
+          <br>
+          <form *ngIf="event">
+            <input [hidden]="hideform" style="width: 80%; margin-left: 10%;" class="form-control"  type="text" name="title" placeholder="Title" [(ngModel)]="event.title" required #title="ngModel">
+            <br>
+            <input [hidden]="hideform" style="width: 80%; margin-left: 10%;" class="form-control"  type="datetime-local" name="start" [(ngModel)]="event.start" required #start="ngModel">
+            <br>
+            <input [hidden]="hideform" style="width: 80%; margin-left: 10%;" class="form-control"  type="datetime-local" name="end" [(ngModel)]="event.end" required #end="ngModel">
+            <br>
+            <textarea [hidden]="hideform" style="width: 80%; margin-left: 10%;" class="form-control"  type="text" name="description" placeholder="Description" cols="30" rows="5" [(ngModel)]="event.description" required #description="ngModel"></textarea>
+            <br>
+            <input [hidden]="hideimage" style="width: 80%; margin-left: 10%; margin-bottom: 15px;" class="form-control" type="file" name="image" (change)="onFileSelected($event)" accept=".jpeg, .png, .jpg" />
+            <button [hidden]="hideform" class="btn btn-primary" style="margin-left: 50%;" (click)="addEvent(event)" [disabled]="title.invalid || description.invalid">Next</button>
+            <a routerLink="/home/events" href="/home" >
+              <input [hidden]="hideimage" class="btn btn-primary" style="margin-left: 45%; margin-top: 15px;" type="submit" (click)="addImage()" value="Add event" />
+            </a>
+            <div class="alert alert-success" [hidden]="showmsg" style=" width: 400px; margin-left: 28%; text-align: center; border-radius: 15px; margin-top: 40px;">
+            {{ msg }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="event-slider5">
+  <h4 style="text-align: center;">Here Is {{nEvents}} Events</h4>
+  <br>
+  <br>
+  <div class="container" >
+    <div class="row">
+      <div  *ngFor="let events of ListEvent; let i of index" >
+        <div class="main-card" style="width: 100%;" >
+          <div class="cards"  >
+            <div class="card" style="width: 400px; min-height: 650px; height: 100%;" >
+              <div class="content">
+                <li style="list-style-type: none;">
+                  <a class="nav-link" style="font-weight: bold; display: inline; color: black; ">
+                    <i class="ion-md-power"></i> {{events.user.nom}} {{events.user.prenom}}
+                  </a>
+              
+                  <br>
+                  <br>
+                  <small>Published on : {{events.date}}</small>
+                  <br>
+                  <small>Start At : {{events.start}}</small>
+                  <br>
+                  <small>End At : {{events.end}}</small>
+                </li>
+                <div class="img" style="border:2px red !important;">
+                  <img src="http://localhost:9091/Event/{{ events.image }}" style="width: 307px;max-height: 307px;" alt="Event Picture" (click)="setEventId(events._id)" routerLink="/home/events/event" />
+                </div>
+                <div class="details">
+                  <div class="name" style="hyphens: none;">{{events.titre}}</div>
+                </div>
+                <br>
+                <p style="width: 80%; height: 90px;">{{events.description}}</p>
+                <br>
+         
+                
+                <br>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Delete-->
+<ng-template #contentalert let-modal>
+  <!-- <div class="modal-header">
+    <h5 style="color: black; text-align: center;" class="modal-title" id="modal-basic-title">Are You Sur to delete this Event ?</h5>
+    <a href="/home/events">
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </a>
+  </div> -->
+  <div class="modal-body" >
+    <form>
+      <!-- <div class="form-group" style="align-items: center;">
+        <a style="color: red;" href="/home/events" class="btn btn-default" (click)="deleteEvent(); modal.dismiss('Cross click')">Confirm</a>
+        <a style="color: green;" class="btn btn-link" class="btn btn-default" href="/home/events" (click)="modal.dismiss('Cross click')">Cancel</a>
+      </div> -->
+    </form>
+  </div>
+</ng-template>
+
+

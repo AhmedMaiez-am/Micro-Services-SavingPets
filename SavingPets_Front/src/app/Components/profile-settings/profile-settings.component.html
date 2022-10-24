@@ -1,0 +1,112 @@
+<div class="profile" >
+  <div class="container1">
+    <div class="row">
+      <!-- Update Profile-->
+      <div>
+          <div class="rightbox" *ngIf="user">
+
+            <label><b>First Name</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.nom" required #nom="ngModel" />
+            </div>
+            <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">
+              <div *ngIf="nom.errors.required"> First Name Is a Required Field ! </div>
+            </div>
+
+            <label><b>Last Name</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.prenom" required #prenom="ngModel" />
+            </div>
+            <div class="alert alert-danger" *ngIf="prenom.invalid && prenom.touched">
+              <div *ngIf="prenom.errors.required"> Last Name Is a Required Field ! </div>
+            </div>
+
+            <label><b>Title</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.titre" />
+            </div>
+
+            <label><b>Email</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.email" required #email="ngModel" pattern="[a-zA-Z0-9-.]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{2,4}"/>
+            </div>
+            <small id="emailHelp" class="form-text text-muted">We don't share you email adress to others</small>
+            <br>
+            <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+              <div *ngIf="email.errors.required"> Email Is a required Field ! </div>
+              <div *ngIf="email.errors.pattern"> Invalid Email </div>
+            </div>
+
+            <label><b>Birth Date</b></label>
+            <div class="form-group">
+              <input type="date" class="form-control" [(ngModel)]="user.dateNaissance" />
+            </div>
+
+            <label><b>Tel</b></label>
+            <div class="form-group">
+              <input type="text"  class="form-control" [(ngModel)]="user.tel"  ng2TelInput [ng2TelInputOptions]="{initialCountry: 'tn', autoHideDialCode: false, separateDialCode: true}" />
+            </div>
+
+            <label><b>Pays</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.paye" />
+            </div>
+
+            <label><b>City</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.ville" />
+            </div>
+
+            <label><b>Street</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.rue" />
+            </div>
+
+            <label><b>Post Number</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.codePostal"/>
+            </div>
+
+            <label><b>Community Life</b></label>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="user.softSkills" />
+            </div>
+
+            <label><b>SEX</b></label>
+            <div class="form-group">
+              <select id="sujet" type="text" class="form-control" [(ngModel)]="user.sex">
+                <option value="HOMME" class="form-control" id="option">HOMME</option>
+                <option value="FEMME" class="form-control" id="option">FEMME</option>
+                <option value="NOT_SPECIFIED" class="form-control" id="option">NOT_SPECIFIED</option>
+              </select>
+            </div>
+
+            <label><b>Bio</b></label>
+            <div class="form-group">
+              <textarea type="text" class="form-control" style="height: 120px !important" [(ngModel)]="user.bio" ></textarea>
+            </div>
+
+            <div>
+              <label><b>Skills</b></label>
+              <div class="skills1">
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[0]">&nbsp; &nbsp; &nbsp; &nbsp;
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[1]">&nbsp; &nbsp; &nbsp; &nbsp;
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[2]">&nbsp; &nbsp; &nbsp; &nbsp;
+              </div>
+              <div class="skills1">
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[3]">&nbsp; &nbsp; &nbsp; &nbsp;
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[4]">&nbsp; &nbsp; &nbsp; &nbsp;
+                <input style="width: 200px;" type="text" class="form-controle" [(ngModel)]="user.skills[5]">&nbsp; &nbsp; &nbsp; &nbsp;
+              </div>
+            </div>
+
+
+            <div class="alert alert-success" [hidden]="showmsg" >
+              {{ msg }}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

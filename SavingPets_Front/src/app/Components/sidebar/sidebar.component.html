@@ -1,0 +1,63 @@
+<input type="checkbox" id="active1">
+<label for="active1" class="menu-btn"><span></span></label>
+<label for="active1" class="close"></label>
+<div *ngIf="user" class="dashboard">
+  <h3 style="display: block;">Hi
+    <img src="../../../assets/images/wave.gif" width="30px" alt="Hello">
+    , {{ user.nom }}
+  </h3>
+  <br>
+  <p style="display: block !important;">{{ user.nom }}</p><br>
+
+  <ul class="nav">
+
+    <li class="nav-item" routerLink="/home/profile" routerLinkActive="active" style="width: 250px;">
+      <i class="fa-solid fa-user-group" style="color: #03c1ad;vertical-align: -50%;margin-right: 15px;font-size: medium;"></i>
+      <a href="/home/profile">Profile</a>
+    </li>
+
+
+
+    <li class="nav-item" routerLinkActive="active" routerLink="/home/gestion-blog" style="width: 250px;">
+      <i class="fa-solid fa-file-pen" style="color: #03c1ad;  vertical-align: -50%; margin-right: 15px;font-size: medium;"></i>
+      <a href="">Vaccins</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active" routerLink="/home/gestion-event" style="width: 250px;">
+      <i class="fa-regular fa-flag" style="color: #03c1ad;vertical-align: -50%;margin-right: 15px;font-size: medium;"></i>
+      <a href="/home/gestion-event">My Events</a>
+    </li>
+<!-- 
+    <div [hidden]="hideuniversities" ngbDropdown class="d-inline-block">
+      <li [hidden]="hideuniversities" class="nav-item" routerLink="home/universities" routerLinkActive="active" style="width: 250px;" id="dropdownBasic1" ngbDropdownToggle>
+        <i class="fa-solid fa-building-columns" style="color: #03c1ad;vertical-align: -50%;margin-right: 15px;font-size: medium;"></i>
+        <a>Universities</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="border-radius: 30px; border: solid #03c1ad;width: 250px">
+          <button ngbDropdownItem ><a href="home/universities" > All Universities </a></button>
+          <hr>
+          <button ngbDropdownItem *ngFor="let un of listUniversite"><a (click)="setIdUniversite(un._id); getUniversiteById()" href="home/university" > {{un.nom}} </a></button>
+        </div>
+      </li>
+    </div> -->
+
+    <!-- <li [hidden]="hidefiliere" class="nav-item" routerLink="home/university" routerLinkActive="active" style="width: 250px;">
+      <i class="fa-solid fa-building-columns" style="color: #03c1ad;vertical-align: -50%;margin-right: 15px;font-size: medium;"></i>
+      <a href="home/university">My {{ user.nom }}</a>
+    </li> -->
+    <div ngbDropdown class="d-inline-block">
+      <li class="nav-item" routerLink="home/settings" routerLinkActive="active" style="width: 250px;" id="dropdownBasic1" ngbDropdownToggle>
+        <i class="fa-solid fa-gear" style="color: #03c1ad;vertical-align: -50%;margin-right: 15px;font-size: medium;"></i>
+        <a>Settings</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="border-radius: 30px; border: solid #03c1ad;width: 250px">
+          <button ngbDropdownItem><a href="home/changeMdp">Change Password</a></button>
+        </div>
+      </li>
+    </div>
+
+
+  </ul>
+  <hr />
+  <br />
+</div>
+
+
+
